@@ -30,4 +30,14 @@ def add_link(request):
 		title = request.POST.get("title", "")
 		print "got add a link post"
 		#INSERT CODE HERE
+		#truncate tags string
+		tags = tags.split(",")
+		tag_objects = []
+		for tag in tags:
+			print len(tag_objects)
+			tag_objects.append(Tag.objects.get_or_create(name=tag)[0])
+		l = Link.objects.get_or_create(title=title, url=url)[0]
+    	for tag in tag_objects:
+        	l.tags.add(tag)
+
 	return redirect(index)
