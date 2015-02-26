@@ -28,6 +28,5 @@ def add_link(request):
 		url = request.POST.get("url", "")
 		tags = request.POST.get("tags", "")
 		title = request.POST.get("title", "")
-		print "got add a link post"
 		#INSERT CODE HERE
 	return redirect(index)

@@ -33,7 +33,7 @@
                     </ul>
                 </div><!--
                 --><div id="content">
-                	{% for link in links %}
+                	{& for link in links %}
                     <div class="link">
                         <h4><a href="{{ link.url }}">{{ link.title }}</a></h4>
                         <p class="tags">
